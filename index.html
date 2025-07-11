@@ -4,568 +4,223 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Eyman-Vesion</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
   <style>
-    :root {
-      --primary: #8B4513;
-      --secondary: #D2B48C;
-      --accent: #CD853F;
-      --light: #FAF8F5;
-      --dark: #333;
-      --text: #2E2E2E;
-    }
-
-    * {
+    body {
+      font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      transition: all 0.3s ease;
+      background-color: #f9f9f9;
+      font-size: 16px;
     }
 
-    body {
-      background-color: var(--light);
-      color: var(--text);
-      overflow-x: hidden;
-    }
-
-    /* Language Switcher */
-    .lang-switcher {
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      z-index: 1000;
-      display: flex;
-      gap: 10px;
-      background: rgba(255, 255, 255, 0.9);
-      padding: 8px;
-      border-radius: 30px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    }
-
-    .lang-btn {
-      background: transparent;
-      border: none;
-      padding: 5px 10px;
-      border-radius: 20px;
-      cursor: pointer;
-      font-size: 14px;
-      font-weight: 600;
-    }
-
-    .lang-btn.active {
-      background: var(--primary);
-      color: white;
-    }
-
-    /* Header */
     header {
-      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      background-color: #d9ca90;
       color: white;
-      padding: 80px 0 40px;
+      padding: 50px;
       text-align: right;
-      position: relative;
-      clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
-      margin-bottom: -30px;
-    }
-
-    header::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjA1KSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3QgZmlsbD0idXJsKCNwYXR0ZXJuKSIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIvPjwvc3ZnPg==');
-    }
-
-    nav {
-      position: relative;
-      z-index: 1;
     }
 
     nav a {
-      color: white;
-      margin: 0 1.5em;
+      color: rgb(0, 0, 0);
+      margin: 3em;
       text-decoration: none;
-      font-weight: 600;
-      font-size: 1.1rem;
-      position: relative;
-      padding: 5px 0;
+      transition: 0.3s;
     }
 
-    nav a::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 0;
-      height: 2px;
-      background-color: white;
-      transition: width 0.3s ease;
+    nav a:hover {
+      color: #47b371;
+      transform: scale(1.4);
     }
 
-    nav a:hover::after {
-      width: 100%;
-    }
-
-    nav a.active {
-      color: #FFD700;
-    }
-
-    /* Intro Section */
     .intro {
-      padding: 5rem 2rem;
+      padding: 2em;
       text-align: center;
-      background-color: white;
-      margin: 0 auto;
-      max-width: 1200px;
     }
 
-    .intro h1 {
-      font-size: clamp(2rem, 5vw, 4rem);
-      color: var(--primary);
-      margin-bottom: 1rem;
-      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
-    }
-
-    /* Blogs Section */
     .blogs {
       display: flex;
-      gap: 2rem;
-      padding: 2rem;
+      gap: 70px;
+      align-items: center;
+      padding: 1em;
       flex-wrap: wrap;
       justify-content: center;
-      max-width: 1200px;
-      margin: 0 auto;
+    }
+
+    .blogs img {
+      width: 250px;
+      border-radius: 1px;
+      transition: 0.3s;
+    }
+
+    .blogs img:hover {
+      transform: scale(1.1);
     }
 
     article {
       background-color: white;
-      border-radius: 15px;
-      overflow: hidden;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-      width: 300px;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      position: relative;
+      border: 1px solid #ddd;
+      padding: 1em;
+      width: 240px;
+      max-width: 350px;
+      border-radius: 10px;
     }
 
-    article:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+    article a {
+      background-color: rgb(191, 110, 38);
+      color: rgb(0, 0, 0);
+      padding: 10px;
+      border-radius: 5px;
+      text-decoration: none;
+      display: block;
+      width: fit-content;
+      margin: 0 auto;
     }
 
-    article img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      transition: transform 0.5s ease;
-    }
-
-    article:hover img {
-      transform: scale(1.05);
-    }
-
-    article .content {
-      padding: 1.5rem;
-    }
-
-    article h3 {
-      color: var(--primary);
-      margin-bottom: 0.5rem;
-      font-size: 1.3rem;
+    article a:hover {
+      background-color: blue;
+      color: white;
     }
 
     .date {
       display: flex;
       align-items: center;
-      gap: 8px;
-      color: #666;
-      margin-bottom: 1rem;
-      font-size: 0.9rem;
+      gap: 5px;
     }
 
-    .date i {
-      color: var(--accent);
+    .date img {
+      width: 15px;
+      height: 15px;
     }
 
-    article p {
-      margin-bottom: 1.5rem;
-      color: #555;
-      line-height: 1.6;
-    }
-
-    article a {
-      display: inline-block;
-      background: linear-gradient(to right, var(--primary), var(--accent));
-      color: white;
-      padding: 0.6rem 1.5rem;
-      border-radius: 30px;
-      text-decoration: none;
-      font-weight: 600;
-      transition: all 0.3s ease;
-    }
-
-    article a:hover {
-      background: linear-gradient(to right, var(--accent), var(--primary));
-      box-shadow: 0 5px 15px rgba(139, 69, 19, 0.3);
-    }
-
-    /* About Section */
     .about {
+      margin: 25px;
       display: flex;
-      gap: 3rem;
+      gap: 50px;
+      text-align: center;
       align-items: center;
-      padding: 4rem 2rem;
-      max-width: 1200px;
-      margin: 0 auto;
-      flex-wrap: wrap;
       justify-content: center;
+      flex-wrap: wrap;
     }
 
-    .about-image {
-      flex: 1;
-      min-width: 300px;
-      max-width: 500px;
-      position: relative;
+    .about img {
+      width: 500px;
+      border-radius: 50%;
+      max-width: 90%;
     }
 
-    .about-image img {
-      width: 100%;
-      border-radius: 20px;
-      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
-      transform: rotate(-3deg);
-      transition: transform 0.5s ease;
-    }
-
-    .about-image img:hover {
-      transform: rotate(0deg);
-    }
-
-    .about-image::before {
-      content: '';
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      border: 3px dashed var(--primary);
-      border-radius: 20px;
-      top: -15px;
-      left: -15px;
-      z-index: -1;
-      opacity: 0.5;
-    }
-
-    .about-text {
-      flex: 1;
-      min-width: 300px;
+    .abouttext {
+      display: block;
       max-width: 600px;
     }
 
-    .about-text h1 {
-      font-size: clamp(1.8rem, 4vw, 3rem);
-      color: var(--primary);
-      margin-bottom: 1.5rem;
-      line-height: 1.2;
-    }
-
-    .about-text h3 {
-      color: #555;
-      line-height: 1.8;
-      font-weight: 400;
-    }
-
-    /* Contact Section */
     .Contact {
+      text-align: center;
       display: flex;
       justify-content: center;
-      gap: 2rem;
-      padding: 2rem;
+      gap: 30px;
       flex-wrap: wrap;
     }
 
-    .Contact a {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 60px;
-      height: 60px;
-      background-color: var(--primary);
-      color: white;
-      border-radius: 50%;
-      font-size: 1.5rem;
-      transition: all 0.3s ease;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    .Contact img {
+      width: 40px;
     }
 
-    .Contact a:hover {
-      background-color: var(--accent);
-      transform: translateY(-5px) scale(1.1);
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-    }
-
-    /* Footer */
     footer {
-      background: linear-gradient(135deg, var(--primary), var(--secondary));
-      color: white;
+      background-color: #d9ca90;
+      color: rgb(0, 0, 0);
       text-align: center;
-      padding: 3rem 1rem;
-      position: relative;
-      clip-path: polygon(0 10%, 100% 0, 100% 100%, 0% 100%);
+      padding: 1em;
     }
 
-    footer::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjA1KSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3QgZmlsbD0idXJsKCNwYXR0ZXJuKSIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIvPjwvc3ZnPg==');
-    }
-
-    .footer-content {
-      position: relative;
-      z-index: 1;
-    }
-
-    footer p {
-      margin-top: 1.5rem;
-      opacity: 0.9;
-    }
-
-    /* Animations */
-    .animate-on-scroll {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: all 0.6s ease;
-    }
-
-    .animate-on-scroll.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    @keyframes float {
-      0% { transform: translateY(0px); }
-      50% { transform: translateY(-15px); }
-      100% { transform: translateY(0px); }
-    }
-
-    .floating {
-      animation: float 3s ease-in-out infinite;
-    }
-
-    /* RTL Support */
-    [lang="ar"] body {
-      direction: rtl;
-      font-family: 'Tahoma', sans-serif;
-    }
-
-    [lang="ar"] .about {
-      flex-direction: row-reverse;
-    }
-
-    /* Responsive Design */
     @media (max-width: 768px) {
+      body {
+        font-size: 14px;
+      }
+
       header {
-        padding: 70px 0 30px;
         text-align: center;
-        clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
+        padding: 30px;
       }
 
       nav a {
-        margin: 0 1em;
-        display: inline-block;
-      }
-
-      .intro {
-        padding: 3rem 1rem;
+        margin: 1em;
+        display: block;
+        text-align: center;
       }
 
       .about {
-        padding: 2rem 1rem;
+        flex-direction: column;
       }
 
-      .about-image, .about-text {
-        min-width: 100%;
+      .blogs {
+        flex-direction: column;
       }
 
-      .lang-switcher {
-        top: 10px;
-        right: 10px;
+      article {
+        width: 90%;
+      }
+
+      .about img {
+        width: 80%;
       }
     }
   </style>
 </head>
 <body>
 
-  <!-- Language Switcher -->
-  <div class="lang-switcher animate__animated animate__fadeIn">
-    <button class="lang-btn active" onclick="changeLanguage('so')">SO</button>
-    <button class="lang-btn" onclick="changeLanguage('en')">EN</button>
-    <button class="lang-btn" onclick="changeLanguage('ar')">AR</button>
-  </div>
-
-  <header class="animate__animated animate__fadeIn">
+  <header>
     <nav>
-      <a href="index.html" id="nav-home" class="active"><i class="fas fa-home"></i> <span>Home</span></a>
-      <a href="blogs.html" id="nav-blogs"><i class="fas fa-blog"></i> <span>Blogs</span></a>
-      <a href="contact.html" id="nav-contact"><i class="fas fa-envelope"></i> <span>Contact</span></a>
+      <a style="color: red;" href="index.html">Home</a>
+      <a href="blogs.html">Blogs</a>
+      <a href="contact.html">Contact</a>
     </nav>
   </header>
 
   <main>
-    <section class="intro animate-on-scroll">
-      <h1 id="intro-title">Welcome to My site...</h1>
+    <section class="intro">
+      <h1 style="font-size: 5vw; color: #7b6d34;">Welcome to My site...</h1>
     </section>
 
     <section class="blogs">
-      <article class="animate-on-scroll">
-        <img src="Sawirka cidamada somalia.jpg" alt="Cidamada Somalia">
-        <div class="content">
-          <h3 id="blog1-title">Cidamada Somalia</h3>
-          <div class="date">
-            <i class="far fa-calendar-alt"></i> <span id="blog1-date">April 22, 2025</span>
-          </div>
-          <p id="blog1-text">Waa maxay xiriirka ka dhaxeeya jabka ciidamada somaalia Iyo Hogaanka talada haayo</p>
-          <a href="cidamada.html" id="blog1-link">Read More</a>
-        </div>
+      <article>
+        <img src="Sawirka cidamada somalia.jpg" alt="">
+        <h3 style="color: rgb(14, 14, 26);">Cidamada Somalia</h3>
+        <section class="date">
+          <img src="calendar (1).png" alt=""> <strong>:April 22, 2025</strong> 
+        </section>
+        <p>Waa maxay xiriirka ka dhaxeeya jabka ciidamada somaalia Iyo Hogaanka talada haayo</p>
+        <a href="cidamada.html">Read More</a>
       </article>
 
-      <!-- Add more articles here -->
+      
     </section>
 
+    <br><br>
+
     <section class="about">
-      <div class="about-image animate-on-scroll">
-        <img src="Ayman .jpg" alt="Eyman Abdiwahid" class="floating">
-      </div>
-      <div class="about-text animate-on-scroll">
-        <h1 id="about-title">About Info</h1>
-        <h3 id="about-text">
-          Hello and welcome to my personal website.  
-          My name is Eyman Abdiwahid Hussein. On this website, I will share information and insights about politics, focusing on both national and community-level issues.
-          We will also discuss matters related to social welfare and explore ways to achieve a stable and prosperous life for all.
-          Additionally, we will analyze the historical background of Somalia to better understand our present and shape a stronger future.
-        </h3>
-      </div>
+      <img src="Ayman .jpg" alt="">
+      <section class="abouttext">
+        <strong><h1 style="font-size:5vw">About Info</h1></strong>
+        <br>
+        <h3>Hello and welcome to my personal website.  
+        My name is Eyman Abdiwahid Hussein. On this website, I will share information and insights about politics, focusing on both national and community-level issues.
+        We will also discuss matters related to social welfare and explore ways to achieve a stable and prosperous life for all.
+        Additionally, we will analyze the historical background of Somalia to better understand our present and shape a stronger future.</h3>
+      </section>
     </section>
   </main>
 
-  <footer class="animate__animated animate__fadeInUp">
-    <div class="footer-content">
-      <div class="Contact">
-        <a href="https://wa.me/+252612673857" target="_blank"><i class="fab fa-whatsapp"></i></a>
-        <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
-        <a href="https://www.facebook.com/share/1BE9Zvpw62/" target="_blank"><i class="fab fa-facebook-f"></i></a>
-        <a href="#" target="_blank"><i class="far fa-envelope"></i></a>
-      </div>
-      <p id="copyright">© 2025 Eyman Vesion. All Rights Reserved</p>
-    </div>
+  <br><br>
+
+  <footer>
+    <section class="Contact">
+      <a href="https://wa.me/+252612673857" target="_blank"><img src="whatsapp.png" alt=""></a>
+      <a href="#" target="_blank"><img src="twitter.png" alt=""></a>
+      <a href="https://www.facebook.com/share/1BE9Zvpw62/" target="_blank"><img src="facebook.png" alt=""></a>
+      <a href="#" target="_blank"><img src="email (1).png" alt=""></a>
+    </section>
+    <p>© 2025 Eyman Vesion</p>
   </footer>
-
-  <script>
-    // Translations Database
-    const translations = {
-      en: {
-        "nav-home": "Home",
-        "nav-blogs": "Blogs",
-        "nav-contact": "Contact",
-        "intro-title": "Welcome to My Site...",
-        "blog1-title": "Somali Armed Forces",
-        "blog1-date": "April 22, 2025",
-        "blog1-text": "What is the relationship between the weakness of Somali forces and the current leadership?",
-        "blog1-link": "Read More",
-        "about-title": "About Me",
-        "about-text": "Hello and welcome to my personal website. My name is Eyman Abdiwahid Hussein. On this website, I will share information and insights about politics, focusing on both national and community-level issues. We will also discuss matters related to social welfare and explore ways to achieve a stable and prosperous life for all. Additionally, we will analyze the historical background of Somalia to better understand our present and shape a stronger future.",
-        "copyright": "© 2025 Eyman Vesion. All Rights Reserved"
-      },
-      so: {
-        "nav-home": "Guriga",
-        "nav-blogs": "Blogs",
-        "nav-contact": "Xiriir",
-        "intro-title": "Ku soo dhawoow Website-kayga...",
-        "blog1-title": "Cidamada Somalia",
-        "blog1-date": "Abriil 22, 2025",
-        "blog1-text": "Waa maxay xiriirka ka dhaxeeya jabka ciidamada somaalia Iyo Hogaanka talada haayo",
-        "blog1-link": "Akhri Dheeraad",
-        "about-title": "Warbixin Ku Saabsan",
-        "about-text": "Salaan iyo ku soo dhawoow website-kayga shakhsiyeed. Magacaygu waa Eyman Cabdiwahiid Xuseen. Website-kan waxaan ku wadaagi doonaa macluumaad iyo fikrado ku saabsan siyaasadda, iyadoo lagu daabacayo arrimaha qaran iyo kuwa bulshada. Waxaan sidoo kale ka hadli doonaa arrimaha la xiriira horumarinta bulshada iyo siyaabaha loo gaari karo nolosha xasilooni iyo barwaaqo. Intaa waxaa sii dheer, waxaan analayn doonaa taariikhda Soomaaliya si aan u fahanno mustaqbalka iyo horumarka.",
-        "copyright": "© 2025 Eyman Vesion. Dhammaan Xuquuqda way la ilaaliyeen"
-      },
-      ar: {
-        "nav-home": "الصفحة الرئيسية",
-        "nav-blogs": "المدونات",
-        "nav-contact": "اتصل بنا",
-        "intro-title": "مرحبًا بكم في موقعي...",
-        "blog1-title": "القوات المسلحة الصومالية",
-        "blog1-date": "22 أبريل 2025",
-        "blog1-text": "ما هي العلاقة بين ضعف القوات الصومالية والقيادة الحالية؟",
-        "blog1-link": "اقرأ المزيد",
-        "about-title": "معلومات عني",
-        "about-text": "مرحبًا بكم في موقعي الشخصي. اسمي إيمان عبد الواحد حسين. في هذا الموقع، سأشارك معلومات ورؤى حول السياسة، مع التركيز على القضايا الوطنية والمجتمعية. سنناقش أيضًا الأمور المتعلقة بالرعاية الاجتماعية ونستكشف سبل تحقيق حياة مستقرة ومزدهرة للجميع. بالإضافة إلى ذلك، سنحلل الخلفية التاريخية للصومال لفهم حاضرنا بشكل أفضل وتشكيل مستقبل أقوى.",
-        "copyright": "© 2025 إيمان فيجن. جميع الحقوق محفوظة"
-      }
-    };
-
-    // Language Change Function
-    function changeLanguage(lang) {
-      // Update active button
-      document.querySelectorAll('.lang-btn').forEach(btn => {
-        btn.classList.remove('active');
-      });
-      event.target.classList.add('active');
-
-      // Update all translatable elements
-      for (const [id, text] of Object.entries(translations[lang])) {
-        const element = document.getElementById(id);
-        if (element) element.textContent = text;
-      }
-
-      // Update HTML lang attribute
-      document.documentElement.lang = lang;
-
-      // RTL for Arabic
-      document.body.style.direction = lang === 'ar' ? 'rtl' : 'ltr';
-
-      // Save preference
-      localStorage.setItem('lang', lang);
-    }
-
-    // Initialize with saved language or browser preference
-    function initLanguage() {
-      const savedLang = localStorage.getItem('lang');
-      const browserLang = navigator.language.slice(0, 2);
-      
-      if (savedLang) {
-        changeLanguage(savedLang);
-      } else if (['en', 'so', 'ar'].includes(browserLang)) {
-        changeLanguage(browserLang);
-      } else {
-        changeLanguage('so');
-      }
-    }
-
-    // Scroll animations
-    function setupAnimations() {
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-          }
-        });
-      }, { threshold: 0.1 });
-
-      document.querySelectorAll('.animate-on-scroll').forEach(el => {
-        observer.observe(el);
-      });
-    }
-
-    // Initialize everything
-    document.addEventListener('DOMContentLoaded', () => {
-      initLanguage();
-      setupAnimations();
-    });
-  </script>
 </body>
 </html>
+
